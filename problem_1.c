@@ -18,6 +18,9 @@ To avoid problems with the memory model, always restrict your threads to a singl
 
 taskset -c 1 ./problem_1 5 5
 */
+/*
+NOTE: Compile with "gcc -O2 -std=c99 -Werror -Wall -Wextra -pthread -c problem_1.c"
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>

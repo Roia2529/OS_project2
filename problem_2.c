@@ -7,8 +7,11 @@ Make this improvement to your Bakery algorithm using the sched_yield() call.
 If you don't see a performance improvement of at least 5x, you're probably doing something wrong.
 
 Turn in your yielding, single-core Bakery code as problem_2.c.
-* 
 */
+/*
+NOTE: Compile with "gcc -O2 -std=c99 -Werror -Wall -Wextra -pthread -c problem_2.c"
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
