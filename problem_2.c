@@ -7,11 +7,8 @@ Make this improvement to your Bakery algorithm using the sched_yield() call.
 If you don't see a performance improvement of at least 5x, you're probably doing something wrong.
 
 Turn in your yielding, single-core Bakery code as problem_2.c.
+* 
 */
-/*
-NOTE: Compile with "gcc -O2 -std=c99 -Werror -Wall -Wextra -pthread -c problem_2.c"
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -31,7 +28,8 @@ int num_of_thread = 0;
 int max(void)
 {
   int max_value = 0;
-  for(int i=0;i<num_of_thread;i++)
+  int i=0;
+  for(i=0;i<num_of_thread;i++)
   {
     if(Number[i]>max_value)
       max_value = Number[i];
@@ -46,7 +44,8 @@ void lock(int i) {
         //MEMBAR;
         Entering[i] = false;
         //MEMBAR;
-        for (int j = 0; j < num_of_thread; j++) {
+	int j=0;
+        for (j = 0; j < num_of_thread; j++) {
            // Wait until thread j receives its number:
            while(Entering[j])
             { sched_yield(); }
